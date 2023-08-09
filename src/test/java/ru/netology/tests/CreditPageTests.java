@@ -33,9 +33,9 @@ public class CreditPageTests {
 
     @Test
     void creditPositiveAllFieldValidApproved() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getApprovedCard();
-        var creditPage = new CreditPage();
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationApproved();
         assertEquals("APPROVED", SQLHelper.getCreditRequestStatus());
@@ -43,9 +43,10 @@ public class CreditPageTests {
 
     @Test
     void creditPositiveAllFieldValidDeclined() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getDeclinedCard();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationFailure();
         assertEquals("DECLINED", SQLHelper.getCreditRequestStatus());
@@ -53,9 +54,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeAllFieldEmpty() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getEmptyCard();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat4Fields();
 
@@ -65,9 +67,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeNumberCard15Symbols() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getNumberCard15Symbols();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -75,9 +78,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeCardNotInDatabase() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardNotInDatabase();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationFailure();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -85,9 +89,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeMonth1Symbol() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardMonth1Symbol();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -95,9 +100,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeMonthOver12() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardMonthOver12();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationExpirationDateError();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -105,9 +111,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeMonth00ThisYear() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardMonth00ThisYear();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationExpirationDateError();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -115,9 +122,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeMonth00OverThisYear() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardMonth00OverThisYear();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationExpirationDateError();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -125,9 +133,10 @@ public class CreditPageTests {
 
     @Test
     void buyNegativeYear00() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardYear00();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationExpiredError();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -135,9 +144,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeYear1Symbol() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardYear1Symbol();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -145,9 +155,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeYearUnderThisYear() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardYearUnderThisYear();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationExpiredError();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -155,9 +166,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeYearOverThisYearOn6() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardYearOverThisYearOn6();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationExpirationDateError();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -165,9 +177,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeCvv1Symbol() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardCvv1Symbol();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -175,9 +188,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeCvv2Symbols() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardCvv2Symbols();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -185,9 +199,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeOwner1Word() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardHolder1Word();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -195,9 +210,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeOwnerCirillic() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardHolderCirillic();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -205,9 +221,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeOwnerNumeric() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardHolderNumeric();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());
@@ -215,9 +232,10 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeOwnerSpecialSymbols() {
+        var creditPage = new CreditPage();
         startPage.creditPage();
         var cardInfo = DataHelper.getCardSpecialSymbols();
-        var creditPage = new CreditPage();
+
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationWrongFormat();
         assertEquals("0", SQLHelper.getOrderCount());

@@ -6,19 +6,54 @@ import lombok.Value;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.util.Random;
 
 public class DataHelper {
-    private String generateDate(int addDays, int addMonths, int addYears, String pattern) {
-        return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
+
+    private static final String validCard = "4444 4444 4444 4441";
+    private static final String invalidCard = "4444 4444 4444 4442";
+    private static final String [] numbers = new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+
+
+    private static String getValidMonth() {
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("MM"));
     }
 
+    private static String getValidYear() {
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("yy"));
+    }
+
+    private static String getNumbers() {
+        Random random = new Random();
+        var fistNumber = numbers[random.nextInt(10)];
+        var secondNumber = numbers[random.nextInt(9) + 1];
+        return fistNumber + secondNumber;
+    }
+    private static String getCVC() {
+        Random random = new Random();
+        var firstNumber = numbers[random.nextInt(10)];
+        var secondNumber = getNumbers();
+        return firstNumber + secondNumber;
+    }
+    private static String getOwner() {
+        Faker faker = new Faker();
+        return faker.name().fullName();
+    }
+
+
+
+
     public static CardInfo getApprovedCard() {
-        return new CardInfo("4444444444444441", getShiftedMonth(2), getShiftedYear(0), "Grisha Petrosyan", "888");
+        return new CardInfo(validCard, getValidMonth(), getValidYear(), getOwner(), getCVC());
     }
 
     public static CardInfo getDeclinedCard() {
-        return new CardInfo("4444444444444442", getShiftedMonth(3), getShiftedYear(1), "Grisha Petrosyan", "777");
+        return new CardInfo(invalidCard, getValidMonth(), getValidYear(), getOwner(), getCVC());
     }
+
+
+
+
 
     public static CardInfo getEmptyCard() {
         return new CardInfo("", "", "", "", "");
@@ -29,7 +64,7 @@ public class DataHelper {
     }
 
     public static String getShiftedYear(int yearCount) {
-        return LocalDate.now().plusYears(yearCount).format(DateTimeFormatter.ofPattern("YY"));
+        return LocalDate.now().plusYears(yearCount).format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static CardInfo getNumberCard15Symbols() {
