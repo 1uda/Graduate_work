@@ -33,8 +33,7 @@ public class CreditPageTests {
 
     @Test
     void creditPositiveAllFieldValidApproved() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getApprovedCard();
         creditPage.insertCardData(cardInfo);
         creditPage.waitNotificationApproved();
@@ -43,8 +42,7 @@ public class CreditPageTests {
 
     @Test
     void creditPositiveAllFieldValidDeclined() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getDeclinedCard();
 
         creditPage.insertCardData(cardInfo);
@@ -54,8 +52,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeAllFieldEmpty() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getEmptyCard();
 
         creditPage.insertCardData(cardInfo);
@@ -67,8 +64,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeNumberCard15Symbols() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getNumberCard15Symbols();
 
         creditPage.insertCardData(cardInfo);
@@ -78,8 +74,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeCardNotInDatabase() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardNotInDatabase();
 
         creditPage.insertCardData(cardInfo);
@@ -89,8 +84,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeMonth1Symbol() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardMonth1Symbol();
 
         creditPage.insertCardData(cardInfo);
@@ -100,8 +94,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeMonthOver12() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardMonthOver12();
 
         creditPage.insertCardData(cardInfo);
@@ -111,8 +104,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeMonth00ThisYear() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardMonth00ThisYear();
 
         creditPage.insertCardData(cardInfo);
@@ -122,8 +114,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeMonth00OverThisYear() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardMonth00OverThisYear();
 
         creditPage.insertCardData(cardInfo);
@@ -133,8 +124,7 @@ public class CreditPageTests {
 
     @Test
     void buyNegativeYear00() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardYear00();
 
         creditPage.insertCardData(cardInfo);
@@ -144,8 +134,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeYear1Symbol() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardYear1Symbol();
 
         creditPage.insertCardData(cardInfo);
@@ -155,8 +144,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeYearUnderThisYear() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardYearUnderThisYear();
 
         creditPage.insertCardData(cardInfo);
@@ -166,8 +154,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeYearOverThisYearOn6() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardYearOverThisYearOn6();
 
         creditPage.insertCardData(cardInfo);
@@ -177,8 +164,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeCvv1Symbol() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardCvv1Symbol();
 
         creditPage.insertCardData(cardInfo);
@@ -188,8 +174,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeCvv2Symbols() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardCvv2Symbols();
 
         creditPage.insertCardData(cardInfo);
@@ -199,8 +184,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeOwner1Word() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardHolder1Word();
 
         creditPage.insertCardData(cardInfo);
@@ -210,8 +194,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeOwnerCirillic() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardHolderCirillic();
 
         creditPage.insertCardData(cardInfo);
@@ -221,8 +204,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeOwnerNumeric() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardHolderNumeric();
 
         creditPage.insertCardData(cardInfo);
@@ -232,8 +214,7 @@ public class CreditPageTests {
 
     @Test
     void creditNegativeOwnerSpecialSymbols() {
-        var creditPage = new CreditPage();
-        startPage.creditPage();
+        var creditPage = startPage.creditPage();
         var cardInfo = DataHelper.getCardSpecialSymbols();
 
         creditPage.insertCardData(cardInfo);

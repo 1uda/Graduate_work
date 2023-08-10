@@ -34,8 +34,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyPositiveAllFieldValidApproved() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getApprovedCard();
 
         orderCardPage.insertCardData(cardInfo);
@@ -45,8 +44,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyPositiveAllFieldValidDeclined() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getDeclinedCard();
 
         orderCardPage.insertCardData(cardInfo);
@@ -57,8 +55,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeAllFieldEmpty() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getEmptyCard();
 
         orderCardPage.insertCardData(cardInfo);
@@ -69,8 +66,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeNumberCard15Symbols() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getNumberCard15Symbols();
 
         orderCardPage.insertCardData(cardInfo);
@@ -80,8 +76,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeCardNotInDatabase() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardNotInDatabase();
 
         orderCardPage.insertCardData(cardInfo);
@@ -91,8 +86,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeMonth1Symbol() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardMonth1Symbol();
 
         orderCardPage.insertCardData(cardInfo);
@@ -102,8 +96,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeMonthOver12() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardMonthOver12();
 
         orderCardPage.insertCardData(cardInfo);
@@ -113,8 +106,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeMonth00ThisYear() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardMonth00ThisYear();
 
         orderCardPage.insertCardData(cardInfo);
@@ -123,8 +115,7 @@ public class OrderCardPageTest {
     }
     @Test
     void creditNegativeMonth00OverThisYear() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardMonth00OverThisYear();
 
         orderCardPage.insertCardData(cardInfo);
@@ -134,8 +125,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeYear00() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardYear00();
 
         orderCardPage.insertCardData(cardInfo);
@@ -145,8 +135,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeYear1Symbol() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardYear1Symbol();
 
         orderCardPage.insertCardData(cardInfo);
@@ -156,8 +145,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeYearUnderThisYear() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardYearUnderThisYear();
 
         orderCardPage.insertCardData(cardInfo);
@@ -167,8 +155,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeYearOverThisYearOn6() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardYearOverThisYearOn6();
 
         orderCardPage.insertCardData(cardInfo);
@@ -178,8 +165,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeCvv1Symbol() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardCvv1Symbol();
 
         orderCardPage.insertCardData(cardInfo);
@@ -189,8 +175,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeCvv2Symbols() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardCvv2Symbols();
 
         orderCardPage.insertCardData(cardInfo);
@@ -200,8 +185,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeOwner1Word() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardHolder1Word();
 
         orderCardPage.insertCardData(cardInfo);
@@ -211,8 +195,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeOwnerCirillic() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardHolderCirillic();
 
         orderCardPage.insertCardData(cardInfo);
@@ -222,8 +205,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeOwnerNumeric() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardHolderNumeric();
 
         orderCardPage.insertCardData(cardInfo);
@@ -233,8 +215,7 @@ public class OrderCardPageTest {
 
     @Test
     void buyNegativeOwnerSpecialSymbols() {
-        var orderCardPage = new OrderCardPage();
-        startPage.orderCardPage();
+        var orderCardPage = startPage.orderCardPage();
         var cardInfo = DataHelper.getCardSpecialSymbols();
 
         orderCardPage.insertCardData(cardInfo);
