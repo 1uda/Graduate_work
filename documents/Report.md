@@ -14,7 +14,7 @@
 
 
 #### Отчет по результатам тестирования Gradle:
-![Test Summary.png](Test Summary.png)
+![Test_Summary.png](Test_Summary.png)
 
 
 ### Рекомендации
